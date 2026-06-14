@@ -4,12 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "keywords": [],
-  "author": "",
+  "author": [],
   "license": "ISC",
   "dependencies": {
     "@supabase/supabase-js": "^2.108.1"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0"
   }
 }

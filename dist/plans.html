@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Plans — MetroX Hosting</title>
+
+<!-- SEO -->
+<meta name="description" content="MetroX Hosting plans: Minecraft hosting, VPS, and server development. Affordable, powerful, DDoS protected."/>
+<meta name="keywords" content="minecraft hosting, vps hosting, server hosting india, metrox hosting"/>
+<meta name="theme-color" content="#00d4ff"/>
+<link rel="icon" type="image/webp" href="/assets/mollynodes-logo-BUfI_eyz.webp"/>
+<link rel="apple-touch-icon" href="/assets/mollynodes-logo-BUfI_eyz.webp"/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="MetroX Hosting"/>
+<meta property="og:title" content="MetroX Hosting Plans"/>
+<meta property="og:description" content="Premium Minecraft hosting, VPS, and server development services."/>
+<meta property="og:image" content="/assets/mollynodes-logo-BUfI_eyz.webp"/>
+<meta property="og:locale" content="en_IN"/>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+<style>
+:root{
+  --bg:#04070f;
+  --accent:#00d4ff;
+  --accent2:#0084ff;
+  --green:#00ff88;
+  --gold:#ffd700;
+  --text:#e8f4ff;
+  --muted:#6a8fa8;
+  --card:#0a1628;
+  --border:#112240;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overflow-x:hidden;}
+canvas#bgCanvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;}
+
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 40px;background:rgba(4,7,15,0.95);backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(0,212,255,0.12);
+}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo img{height:44px;}
+.nav-logo span{font-family:'Orbitron',sans-serif;font-size:1.1rem;font-weight:700;color:var(--accent);}
+.nav-links{display:flex;gap:28px;list-style:none;}
+.nav-links a{text-decoration:none;color:var(--muted);font-family:'Rajdhani',sans-serif;font-size:0.95rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--accent);}
+.nav-ctas{display:flex;gap:12px;}
+.btn-primary{padding:8px 20px;background:linear-gradient(135deg,var(--accent2),var(--accent));color:#fff;border:none;border-radius:6px;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.9rem;letter-spacing:1px;cursor:pointer;text-decoration:none;transition:all 0.2s;}
+.btn-outline{padding:8px 20px;border:1px solid var(--accent);color:var(--accent);background:transparent;border-radius:6px;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.9rem;letter-spacing:1px;cursor:pointer;text-decoration:none;transition:all 0.2s;}
+
+main{position:relative;z-index:1;padding-top:80px;}
+
+/* PAGE HERO */
+.page-hero{
+  padding:60px 40px 40px;text-align:center;
+  background:linear-gradient(180deg,rgba(0,84,255,0.1) 0%,transparent 100%);
+  border-bottom:1px solid var(--border);
+}
+.page-hero h1{font-family:'Orbitron',sans-serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:900;margin-bottom:12px;}
+.page-hero h1 span{background:linear-gradient(90deg,var(--accent),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.page-hero p{color:var(--muted);max-width:520px;margin:0 auto;line-height:1.7;}
+
+/* TAB NAVIGATION */
+.tab-nav-wrapper{
+  display:flex;justify-content:center;margin:40px 0 0;
+  padding:0 20px;overflow-x:auto;
+}
+.tab-nav{
+  display:flex;gap:8px;background:var(--card);
+  border:1px solid var(--border);border-radius:12px;
+  padding:6px;overflow-x:auto;scroll-behavior:smooth;
+}
+.tab-nav::-webkit-scrollbar{height:4px;}
+.tab-nav::-webkit-scrollbar-thumb{background:var(--accent);border-radius:2px;}
+.tab-btn{
+  padding:12px 16px;font-family:'Rajdhani',sans-serif;font-weight:700;
+  font-size:0.85rem;letter-spacing:1px;text-transform:uppercase;
+  cursor:pointer;transition:all 0.25s;color:var(--muted);
+  background:transparent;border:none;white-space:nowrap;
+  border-radius:8px;
+}
+.tab-btn:hover{color:var(--accent);}
+.tab-btn.active{
+  background:linear-gradient(135deg,var(--accent2),var(--accent));
+  color:#fff;box-shadow:0 4px 20px rgba(0,212,255,0.3);
+}
+
+/* SECTIONS */
+.plans-section{padding:60px 40px;max-width:1300px;margin:0 auto;display:none;}
+.plans-section.active{display:block;animation:fadeIn 0.5s ease-out;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+
+.section-header{text-align:center;margin-bottom:40px;}
+.section-header h2{font-family:'Orbitron',sans-serif;font-size:2.2rem;font-weight:900;margin-bottom:12px;}
+.section-header p{color:var(--muted);font-size:1rem;line-height:1.6;}
+
+/* SPEC BAR */
+.spec-bar{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:16px;margin:32px 0;background:rgba(0,84,255,0.08);
+  border:1px solid var(--border);border-radius:12px;padding:20px;
+}
+.spec-item{display:flex;flex-direction:column;gap:4px;}
+.spec-item-label{color:var(--muted);font-size:0.75rem;text-transform:uppercase;font-weight:700;letter-spacing:1px;}
+.spec-item-value{color:var(--text);font-size:0.95rem;font-weight:600;}
+
+/* TRIAL BANNER */
+.trial-banner{
+  background:linear-gradient(135deg,rgba(0,255,136,0.08),rgba(0,212,255,0.06));
+  border:2px solid var(--green);border-radius:16px;padding:28px 36px;
+  text-align:center;margin-bottom:48px;
+}
+.trial-banner h3{font-family:'Orbitron',sans-serif;font-size:1.4rem;font-weight:900;color:var(--green);margin-bottom:8px;}
+.trial-banner p{color:var(--muted);font-size:0.95rem;}
+
+/* GRIDS */
+.plans-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:28px;margin-bottom:40px;
+}
+
+/* PLAN CARDS */
+.plan-card{
+  background:var(--card);border:1px solid var(--border);border-radius:16px;
+  padding:28px;position:relative;overflow:hidden;
+  transition:all 0.35s cubic-bezier(0.4,0,0.2,1);
+  animation:slideUp 0.6s ease-out both;
+}
+@keyframes slideUp{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
+.plans-grid .plan-card:nth-child(1){animation-delay:0.05s;}
+.plans-grid .plan-card:nth-child(2){animation-delay:0.1s;}
+.plans-grid .plan-card:nth-child(3){animation-delay:0.15s;}
+.plans-grid .plan-card:nth-child(4){animation-delay:0.2s;}
+.plans-grid .plan-card:nth-child(5){animation-delay:0.25s;}
+.plans-grid .plan-card:nth-child(6){animation-delay:0.3s;}
+
+.plan-card::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(0,212,255,0.05),transparent);
+  opacity:0;transition:opacity 0.3s;
+}
+.plan-card:hover{
+  transform:translateY(-10px);
+  border-color:rgba(0,212,255,0.5);
+  box-shadow:0 20px 60px rgba(0,212,255,0.2);
+}
+.plan-card:hover::before{opacity:1;}
+
+.plan-card.featured{
+  border-color:var(--accent);
+  background:linear-gradient(135deg,rgba(0,84,255,0.15),rgba(0,212,255,0.06),var(--card));
+  position:relative;
+}
+.plan-card.featured::after{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--accent2),var(--accent),var(--green));
+  animation:shimmer 2s ease-in-out infinite;
+}
+@keyframes shimmer{0%{opacity:0.5;}50%{opacity:1;}100%{opacity:0.5;}}
+
+.badge{
+  position:absolute;top:16px;right:16px;
+  background:linear-gradient(135deg,var(--accent2),var(--accent));
+  color:#fff;font-family:'Rajdhani',sans-serif;font-size:0.7rem;font-weight:700;
+  letter-spacing:1px;padding:6px 12px;border-radius:50px;text-transform:uppercase;
+  box-shadow:0 4px 15px rgba(0,212,255,0.3);
+}
+
+.plan-icon{font-size:2.8rem;margin-bottom:12px;}
+.plan-name{
+  font-family:'Orbitron',sans-serif;font-size:1.2rem;font-weight:700;
+  color:var(--text);margin-bottom:4px;
+}
+.plan-tagline{font-size:0.85rem;color:var(--muted);margin-bottom:20px;}
+
+.plan-price{
+  display:flex;align-items:baseline;gap:4px;margin-bottom:24px;
+}
+.plan-price .amount{
+  font-family:'Orbitron',sans-serif;font-size:2.8rem;font-weight:900;
+  background:linear-gradient(90deg,var(--accent),var(--green));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.plan-price .period{font-size:0.95rem;color:var(--muted);}
+
+.plan-divider{height:1px;background:var(--border);margin:20px 0;}
+
+.plan-specs{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:24px;}
+.plan-specs li{
+  display:flex;align-items:center;gap:10px;font-size:0.9rem;color:var(--text);
+}
+.plan-specs li::before{content:'▸';color:var(--accent);font-weight:bold;}
+
+.plan-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:24px;}
+.tag{
+  background:rgba(0,212,255,0.1);border:1px solid rgba(0,212,255,0.3);
+  color:var(--accent);font-size:0.75rem;font-family:'Rajdhani',sans-serif;
+  font-weight:600;letter-spacing:0.5px;padding:4px 10px;border-radius:50px;
+}
+
+.plan-btn{
+  display:block;width:100%;padding:14px;border-radius:10px;
+  font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.95rem;
+  letter-spacing:1px;text-decoration:none;text-transform:uppercase;text  -align:center;
+  background:linear-gradient(135deg,var(--accent2),var(--accent));
+  color:#fff;border:none;cursor:pointer;
+  transition:all 0.25s;
+}
+.plan-btn:hover{
+  box-shadow:0 8px 30px rgba(0,212,255,0.4);
+  transform:translateY(-2px);
+}
+
+/* DEV SERVICES GRID */
+.dev-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:24px;
+}
+.dev-card{
+  background:var(--card);border:1px solid var(--border);border-radius:16px;
+  padding:28px;text-align:center;transition:all 0.35s;
+}
+.dev-card:hover{transform:translateY(-8px);border-color:var(--accent);box-shadow:0 15px 50px rgba(0,212,255,0.15);}
+.dev-card h3{font-family:'Orbitron',sans-serif;font-size:1.3rem;margin-bottom:20px;color:var(--accent);}
+.dev-tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.dev-tier{
+  background:rgba(0,84,255,0.1);border:1px solid var(--border);
+  padding:14px;border-radius:10px;
+}
+.dev-tier-label{font-size:0.75rem;color:var(--muted);text-transform:uppercase;margin-bottom:6px;}
+.dev-tier-price{font-family:'Orbitron',sans-serif;font-size:1.4rem;font-weight:900;color:var(--green);}
+
+/* DOMAIN GRID */
+.domain-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+}
+.domain-card{
+  background:var(--card);border:1px solid var(--border);border-radius:14px;
+  padding:24px;text-align:center;transition:all 0.3s;
+}
+.domain-card:hover{transform:translateY(-8px);border-color:var(--accent);box-shadow:0 15px 40px rgba(0,212,255,0.15);}
+.domain-icon{font-size:2.4rem;margin-bottom:12px;}
+.domain-name{font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:8px;color:var(--accent);}
+.domain-price{font-family:'Orbitron',sans-serif;font-size:1.5rem;font-weight:900;color:var(--green);}
+.domain-note{font-size:0.75rem;color:var(--muted);margin-top:8px;}
+
+/* BOOST PERKS */
+.boost-section{
+  max-width:900px;margin:80px auto 40px;
+  background:linear-gradient(135deg,rgba(0,255,136,0.08),rgba(0,212,255,0.06));
+  border:2px solid var(--green);border-radius:16px;
+  padding:40px;text-align:center;
+}
+.boost-section h3{
+  font-family:'Orbitron',sans-serif;font-size:1.8rem;font-weight:900;
+  color:var(--green);margin-bottom:12px;
+}
+.boost-section p{color:var(--muted);margin-bottom:28px;font-size:0.95rem;}
+.boost-perks{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;margin-bottom:28px;
+}
+.boost-perk{
+  background:rgba(0,255,136,0.1);border:1px solid var(--green);
+  border-radius:10px;padding:20px;
+}
+.boost-perk-label{color:var(--green);font-weight:700;margin-bottom:8px;text-transform:uppercase;font-size:0.8rem;}
+.boost-perk-value{font-family:'Orbitron',sans-serif;font-size:1rem;color:var(--text);}
+.boost-btn{
+  display:inline-block;padding:12px 28px;
+  background:linear-gradient(135deg,var(--accent2),var(--accent));
+  color:#fff;text-decoration:none;border-radius:8px;
+  font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.95rem;
+  letter-spacing:1px;transition:all 0.3s;
+}
+.boost-btn:hover{box-shadow:0 8px 25px rgba(0,212,255,0.4);}
+
+/* FOOTER */
+footer{
+  position:relative;z-index:1;background:rgba(4,7,15,0.98);
+  border-top:1px solid var(--border);padding:40px 60px 24px;
+}
+.footer-bottom{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+.footer-bottom p{font-size:0.8rem;color:var(--muted);}
+.footer-bottom a{color:var(--muted);text-decoration:none;transition:color 0.2s;}
+.footer-bottom a:hover{color:var(--accent);}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:rgba(0,212,255,0.3);border-radius:3px;}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .plans-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));}
+  .dev-tiers{grid-template-columns:1fr;}
+}
+
+@media(max-width:768px){
+  nav{padding:10px 20px;}
+  .nav-links{display:none;}
+  .tab-nav-wrapper{padding:0 10px;margin:30px 0 0;}
+  .tab-btn{padding:10px 12px;font-size:0.75rem;}
+  .plans-section{padding:40px 20px;}
+  .page-hero h1{font-size:1.8rem;}
+  .spec-bar{grid-template-columns:1fr;}
+  .plans-grid{grid-template-columns:1fr;}
+  .dev-tiers{grid-template-columns:repeat(3,1fr);}
+  .domain-grid{grid-template-columns:repeat(2,1fr);}
+}
+
+@media(max-width:480px){
+  .page-hero{padding:40px 20px 30px;}
+  .page-hero h1{font-size:1.4rem;}
+  .section-header h2{font-size:1.6rem;}
+  .tab-nav{flex-wrap:wrap;}
+  .boost-perks{grid-template-columns:1fr;}
+  .domain-grid{grid-template-columns:1fr;}
+}
+</style>
+  <script type="module" crossorigin src="/assets/plans-BPoGDAvO.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-B5Qt9EMX.js">
+</head>
+<body>
+<canvas id="bgCanvas"></canvas>
+
+<nav>
+  <a class="nav-logo" href="index.html">
+    <img src="/assets/mollynodes-logo-BUfI_eyz.webp" alt="MetroX"/>
+    <span>MetroX</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="plans.html" class="active">Plans</a></li>
+    <li><a href="infrastructure.html">Infrastructure</a></li>
+    <li><a href="status.html">Status</a></li>
+    <li><a href="login.html">Login</a></li>
+  </ul>
+  <div class="nav-ctas">
+    <a href="login.html" class="btn-outline">Sign In</a>
+    <a href="https://panel.metrohost.xyz/" target="_blank" class="btn-primary">Get Started</a>
+  </div>
+</nav>
+
+<main>
+  <div class="page-hero">
+    <h1>Choose Your <span>Perfect Plan</span></h1>
+    <p>Premium hosting solutions for every scale — from Minecraft servers to enterprise VPS infrastructure.</p>
+
+    <div class="tab-nav-wrapper">
+      <div class="tab-nav" id="tabNav">
+        <button class="tab-btn active" data-tab="mc-budget">MC Budget</button>
+        <button class="tab-btn" data-tab="mc-premium">MC Premium</button>
+        <button class="tab-btn" data-tab="mc-ryzen">MC Ryzen 9</button>
+        <button class="tab-btn" data-tab="vps-intel">VPS Intel</button>
+        <button class="tab-btn" data-tab="vps-amd">VPS AMD</button>
+        <button class="tab-btn" data-tab="dev-services">Dev Services</button>
+        <button class="tab-btn" data-tab="domains">Domains</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MC BUDGET -->
+  <div class="plans-section active" id="mc-budget">
+    <div class="section-header">
+      <h2>MetroX Budget Plans</h2>
+      <p>High-performance Minecraft hosting on Intel Xeon for every server size.</p>
+    </div>
+
+    <div class="spec-bar">
+      <div class="spec-item">
+        <div class="spec-item-label">Processor</div>
+        <div class="spec-item-value">Intel Xeon E5-2699 V4</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-item-label">Location</div>
+        <div class="spec-item-value">Mumbai, India</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-item-label">Safety</div>
+        <div class="spec-item-value">Advanced DDoS Protection</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-item-label">Connection</div>
+        <div class="spec-item-value">IPv4</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-item-label">Uptime</div>
+        <div class="spec-item-value">99.99%</div>
+      </div>
+    </div>
+
+    <div class="trial-banner">
+      <h3>FREE 24-Hour Trial Available</h3>
+      <p>Try risk-free. No credit card required. Experience premium Minecraft hosting today.</p>
+    </div>
+
+    <div class="plans-grid">
+      <div class="plan-card">
+        <div class="plan-icon">⬜</div>
+        <div class="plan-name">Stone Plan</div>
+        <div class="plan-tagline">Perfect for small servers</div>
+        <div class="plan-price"><span class="amount">₹100</span><span class="period">/mo</span></div>
+        <div class="plan-divider"></div>
+        <ul class="plan-specs">
+          <li>CPU 100%</li>
+          <li>RAM 4GB</li>
+          <li>Storage 10GB SSD</li>
+        </ul>
+        <a href="https://billing.mollynodes.space/" target="_blank" class="plan-btn">Order Now</a>
+      </div>
+
+      <div class="plan-card featured">
+        <span class="badge">POPULAR</span>
+        <div class="plan-icon">⬛</div>
+        <div class="plan-name">Iron Plan</div>
+        <div class="plan-tagline">Most popular choice</div>
+        <div class="plan-price"><span class="amount">₹200</span><span class="period">/mo</span></div>
+        <div class="plan-divider"></div>
+        <ul class="plan-specs">
+          <li>CPU 200%</li>
+          <li>RAM 8GB</li>
+          <li>Storage 20GB SSD</li>
+        </ul>
+        <a href="https://billing.mollynodes.space/" target="_blank" class="plan-btn">Order Now</a>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-icon">🔴</div>
+        <div class="plan-name">Redstone Plan</div>
+        <div class="plan-tagline">Enhanced performance</div>
+        <div class="plan-price"><span class="amount">₹300</span><span class="period">/mo</span></div>
+        <div class="plan-divider"></div>
+        <ul class="plan-specs">
+          <li>CPU 300%</li>
+          <li>RAM 12GB</li>
+          <li>Storage 30GB SSD</li>
+        </ul>
+        <a href="https://billing.mollynodes.space/" target="_blank" class="plan-btn">Order Now</a>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-icon">🟨</div>
+        <div class="plan-name">Gold Plan</div>
+        <div class="plan-tagline">Premium performance</div>
+        <div class="plan-price"><span class="amount">₹400</span><span class="period">/mo</span></div>
+        <div class="plan-divider"></div>
+        <ul class="plan-specs">
+          <li>CPU 400%</li>
+          <li>RAM 16GB</li>
+          <li>Storage 40GB SSD</li>
+        </ul>
+        <a href="https://billing.mollynodes.space/" target="_blank" class="plan-btn">Order Now</a>
+      </div>
+
+      <div class="plan-card">
+        <span class="badge">BEST VALUE</span>
+        <div class="plan-icon">🟢</div>
+        <div class="plan-name">Emerald Plan</div>
+        <div class="plan-tagline">Maximum value</div>
+        <div class="plan-price"><span class="amount">₹800</span><span class="period">/mo</span></div>
+        <div class="plan-divider"></div>
+        <ul class="plan-specs">
+          <li>CPU 500%</li>
+          <li>RAM 32GB</li>
+          <li>Storage 60GB SSD</li>
+        </ul>
+        <a href="https://billing.mollynodes.space/" target="_blank" class="plan-btn">Order Now</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MC PREMIUM -->
+  <div class="plans-section" id="mc-premium">
+    <div class="section-header">
+      <h2>MetroX Premium Plans</h2>
+      <p>AMD EPYC powered servers with enterprise-grade performance.</p>
+    </div>
+
+    <div class="spec-bar">
+      <div class="spec-item">
+        <div class="spec-item-label">Processor</div>
+        <div class="spec-item-value">AMD EPYC 9000</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-item-label">Location</div>
+        <div class="spec-item-value">Mumbai, India</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-item-label">Safety</div>
+        <div class="spec-item-value">Advanced DDoS Protection</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-item-label">Connection</div>
+        <div class="spec-item-value">IPv4</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-item-label">Uptime</div>
+        <div class="spec-item-value">99.99%</div>
+      </div>
+    </div>
+
+    <div class="plans-grid">
+      <div class="plan-card">
+        <div class="plan-icon">⬜</div>
+        <div class="plan-name">Stone Plan</div>
+        <div class="plan-tagline">Premium starter</div>
+        <div class="plan-price"><span class="amount">₹140</span><span class="period">/mo</span></div>
+        <div class="plan-divider"></div>
+        <ul class="plan-specs">
+          <li>CPU 100%</li>
+          <li>RAM 4GB</li>
+          <li>Storage 15GB SSD</li>
+        </ul>
+        <a href="https://billing.mollynodes.space/" target="_blank" class="plan-btn">Order Now</a>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-icon">⬛</div>
+        <div class="plan-name">Iron Plan</div>
+        <div class="plan-tagline">Balanced performance</div>
+        <div class="plan-price"><span class="amount">₹280</span><span class="period">/mo</span></div>
+        <div class="plan-divider"></div>
+        <ul class="plan-specs">
+          <li>CPU 200%</li>
+          <li>RAM 8GB</li>
+          <li>Storage 25GB SSD</li>
+        </ul>
+        <a href="https://billing.mollynodes.space/" target="_blank" class="plan-btn">Order Now</a>
+      </div>
+
+      <div class="plan-card featured">
+        <span class="badge">POPULAR</span>
+        <div class="plan-icon">🔴</div>
+        <div class="plan-name">Redstone Plan</div>
+        <div class="plan-tagline">Most popular premium</div>
+        <div class="plan-price"><span class="amount">₹420</span><span class="period">/mo</span></div>
+        <div class="plan-divider"></div>
+        <ul class="plan-specs">
+          <li>CPU 300%</li>
+          <li>RAM 12GB</li>
+          <li>Storage 35GB SSD</li>
+        </ul>
+        <a href="https://billing.mollynodes.space/" target="_blank" class="plan-btn">Order Now</a>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-icon">🟨</div>
+        <div class="plan-name">Gold Plan</div>
+        <div class="plan-tagline">Premium tier</div>
+        <div class="plan-price"><span class="amount">₹560</span><span class="period">/mo</span></div>
+        <div class="plan-divider"></div>
+        <ul class="plan-specs">
+          <li>CPU 400%</li>
+          <li>RAM 16GB</li>
+          <li>Storage 45GB SSD</li>
+        </ul>
+        <a href="https://billing.mollynodes.space/" target="_blank" class="plan-btn">Order Now</a>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-icon">🟢</div>
+        <div class="plan-name">Emerald Plan</div>
+        <div class="plan-tagline">Elite performance</div>
+        <div class="plan-price"><span class="amount">₹1,120</span><span class="period">/mo</span></div>
+        <div class="plan-divider"></div>
+        <ul class="plan-specs">
+          <li>CPU 500%</li>
+          <li>RAM 32GB</li>
+          <li>Storage 65GB SSD</li>
+        </ul>
+        <a href="https://billing.mollynodes.space/" target="_blank" class="plan-btn">Order Now</a>
+      </div>
+
+      <div class="plan-card featured">
+        <span class="badge">ULTIMATE</span>
+        <div class="plan-icon">⬜</div>
+        <div class="plan-name">Netherite Plan</div>
+        <div class="plan-tagline">Maximum power</div>
+        <div class="plan-price"><span class="amount">₹2,240</span><span class="period">/mo</span></div>
+        <div class="plan-divider"></div>
+        <ul class="plan-specs">
+          <li>CPU 600%</li>
+          <li>RAM 64GB</li>
+          <li>Storage 85GB SSD</li>
+        </ul>
+        <a href="https://billing.mollynodes.space/" target="_blank" class="plan-btn">Order Now</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MC RYZEN 9 -->
+  <div class="plans-section" id="mc-ryzen">
+    <div class="section-header">
+      <h2>Ryzen 9 7900X Minecraft Plans</h2>
+      <p>Ultimate performance Minecraft hosting with Ryzen 9 processors.</p>
+    </div>
+
+    <div class="spec-bar">
+      <div class="spec-item">
+        <div class="spec-item-label">Processor</div>
+        <div class="spec-item-value">AMD Ryzen 9 7900X</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-item-label">Location</div>
+        <div class="spec-item-value">Mumbai, India</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-item-label">DDoS Protection</div>
+        <div class="spec-item-value">Enterprise Grade</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-item-label">Storage</div>
+        <div class="spec-item-value">NVMe SSD</div>
+      </div>
+    </div>
+
+    <div class="plans-grid">
+      <div class="plan-card featured">
+        <span class="badge">FEATURED</span>
+        <div class="plan-icon">🌟</div>
+        <div class="plan-name">Eta Plan</div>
+        <div class="plan-tagline">Premium Ryzen 9 hosting</div>
+        <div class="plan-price"><span class="amount">₹1,440</span><span class="period">/mo</span></div>
+        <div class="plan-divider"></div>
+        <ul class="plan-specs">
+          <li>RAM 12GB DDR4 ECC</li>
+          <li>CPU 300%</li>
+          <li>Storage 32GB NVMe SSD</li>
+          <li>4 Backup Limit</li>
+          <li>4 Additional Port</li>
+          <li>3 Database Space</li>
+          <li>Basic DDoS Protection</li>
+          <li>Server Game Panel</li>
+          <li>Fastest Call Support</li>
+        </ul>
+        <a href="https://billing.mollynodes.space/" target="_blank" class="plan-btn">Order Now</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- VPS INTEL -->
+  <div class="plans-section" id="vps-intel">
+    <div class="section-header">
+      <h2>Intel Xeon E5-2699 V4 VPS</h2>
+      <p>High-performance VPS infrastructure in India — Noida location.</p>
+    </div>
+
+    <div class="spec-bar">
+      <div class="spec-item">
+        <div class="spec-item-label">Location</div>
+        <div class="spec-item-value">Noida, India</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-item-label">Storage</div>
+        <div class="spec-item-value">NVMe Storage</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-item-label">DDoS Protection</div>
+        <div class="spec-item-value">NetMoon Blackhole</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-item-label">Uplink</div>
+        <div class="spec-item-value">5Gbps</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-item-label">Uptime</div>
+        <div class="spec-item-value">99.99%</div>
+      </div>
+    </div>
+
+    <div style="margin:32px 0;border-radius:16px;overflow:hidden;">
+      <img src="https://images.pexels.com/photos/37368180/pexels-photo-37368180/free-photo-of-close-up-of-computer-motherboard-with-cpu.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Intel VPS" style="width:100%;max-height:300px;object-fit:cover;opacity:0.8;">
+    </div>
+
+    <div class="plans-grid">
+      <div class="plan-card">
+        <div class="plan-icon">🖥️</div>
+        <div class="plan-name">VPS 1</div>
+        <div class="plan-tagline">Entry-level VPS</div>
+        <div class="plan-price"><span class="amount">₹300</span><span class="period">/mo</span></div>
+        <div class="plan-divider"></div>
+        <ul class="plan-specs">
+          <li>4GB DDR4 ECC RAM</li>
+          <li>2vCore</li>
+          <li>30GB NVMe SSD</li>
+        </ul>
+        <a href="https://billing.mollynodes.space/" target="_blank" class="plan-btn">Order Now</a>
+      </div>
+
+      <div class="plan-card featured">
+        <span class="badge">POPULAR</span>
+        <div class="plan-icon">🖥️</div>
+        <div class="plan-name">VPS 2</div>
+        <div class="plan-tagline">Most popular</div>
+        <div class="plan-price"><span class="amount">₹450</span><span class="period">/mo</span></div>
+        <div class="plan-divider"></div>
+        <ul class="plan-specs">
+          <li>8GB DDR4 ECC RAM</li>
+          <li>4vCore</li>
+          <li>50GB NVMe SSD</li>
+        </ul>
+        <a href="https://billing.mollynodes.space/" target="_blank" class="plan-btn">Order Now</a>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-icon">🖥️</div>
+        <div class="plan-name">VPS 3</div>
+        <div class="plan-tagline">Balanced VPS</div>
+        <div class="plan-price"><span class="amount">₹650</span><span class="period">/mo</span></div>
+        <div class="plan-divider"></div>
+        <ul class="plan-specs">
+          <li>16GB DDR4 ECC RAM</li>
+          <li>6vCore</li>
+          <li>90GB NVMe SSD</li>
+        </ul>
+        <a href="https://billing.mollynodes.space/" target="_blank" class="plan-btn">Order Now</a>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-icon">🖥️</div>
+        <div class="plan-name">VPS 4</div>
+        <div class="plan-tagline">High performance</div>
+        <div class="plan-price"><span class="amount">₹1,250</span><span class="period">/mo</span></div>
+        <div class="plan-divider"></div>
+        <ul class="plan-specs">
+          <li>32GB DDR4 ECC RAM</li>
+          <li>12vCore</li>
+          <li>150GB NVMe SSD</li>
+        </ul>
+        <a href="https://billing.mollynodes.space/" target="_blank" class="plan-btn">Order Now</a>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-icon">🖥️</div>
+        <div class="plan-name">VPS 5</div>
+        <div class="plan-tagline">Enterprise VPS</div>
+        <div class="plan-price"><span class="amount">₹1,600</span><span class="period">/mo</span></div>
+        <div class="plan-divider"></div>
+        <ul class="plan-specs">
+          <li>48GB DDR4 ECC RAM</li>
+          <li>16vCore</li>
+          <li>190GB NVMe SSD</li>
+        </ul>
+        <a href="https://billing.mollynodes.space/" target="_blank" class="plan-btn">Order Now</a>
+      </div>
+
+      <div class="plan-card featured">
+        <span class="badge">ENTERPRISE</span>
+        <div class="plan-icon">🖥️</div>
+        <div class="plan-name">VPS 6</div>
+        <div class="plan-tagline">Maximum power</div>
+        <div class="plan-price"><span class="amount">₹1,999</span><span class="period">/mo</span></div>
+        <div class="plan-divider"></div>
+        <ul class="plan-specs">
+          <li>64GB DDR4 ECC RAM</li>
+          <li>18vCore</li>
+          <li>256GB NVMe SSD</li>
+        </ul>
+        <a href="https://billing.mollynodes.space/" target="_blank" class="plan-btn">Order Now</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- VPS AMD -->
+  <div class="plans-section" id="vps-amd">
+    <div class="section-header">
+      <h2>AMD Ryzen 9 7900X VPS</h2>
+      <p>Next-generation VPS hosting with AMD Ryzen processors — Mumbai location.</p>
+    </div>
+
+    <div class="spec-bar">
+      <div class="spec-item">
+        <div class="spec-item-label">Location</div>
+        <div class="spec-item-value">Mumbai, India</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-item-label">Storage</div>
+        <div class="spec-item-value">NVMe Storage</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-item-label">DDoS Protection</div>
+        <div class="spec-item-value">Enterprise Grade</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-item-label">Uplink</div>
+        <div class="spec-item-value">5Gbps</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-item-label">Uptime</div>
+        <div class="spec-item-value">99.99%</div>
+      </div>
+    </div>
+
+    <div style="margin:32px 0;border-radius:16px;overflow:hidden;">
+      <img src="https://images.pexels.com/photos/32300577/pexels-photo-32300577.jpeg?auto=compress&cs=tinysrgb&w=600" alt="AMD VPS" style="width:100%;max-height:300px;object-fit:cover;opacity:0.8;">
+    </div>
+
+    <div class="plans-grid">
+      <div class="plan-card">
+        <div class="plan-icon">⚙️</div>
+        <div class="plan-name">VPS 1</div>
+        <div class="plan-tagline">AMD Entry-level</div>
+        <div class="plan-price"><span class="amount">₹450</span><span class="period">/mo</span></div>
+        <div class="plan-divider"></div>
+        <ul class="plan-specs">
+          <li>4GB DDR5 ECC RAM</li>
+          <li>2vCore</li>
+          <li>25GB NVMe SSD</li>
+        </ul>
+        <a href="https://billing.mollynodes.space/" target="_blank" class="plan-btn">Order Now</a>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-icon">⚙️</div>
+        <div class="plan-name">VPS 2</div>
+        <div class="plan-tagline">AMD Balanced</div>
+        <div class="plan-price"><span class="amount">₹850</span><span class="period">/mo</span></div>
+        <div class="plan-divider"></div>
+        <ul class="plan-specs">
+          <li>8GB DDR5 ECC RAM</li>
+          <li>4vCore</li>
+          <li>50GB NVMe SSD</li>
+        </ul>
+        <a href="https://billing.mollynodes.space/" target="_blank" class="plan-btn">Order Now</a>
+      </div>
+
+      <div class="plan-card featured">
+        <span class="badge">POPULAR</span>
+        <div class="plan-icon">⚙️</div>
+        <div class="plan-name">VPS 3</div>
+        <div class="plan-tagline">Most popular AMD</div>
+        <div class="plan-price"><span class="amount">₹1,680</span><span class="period">/mo</span></div>
+        <div class="plan-divider"></div>
+        <ul class="plan-specs">
+          <li>16GB DDR5 ECC RAM</li>
+          <li>6vCore</li>
+          <li>100GB NVMe SSD</li>
+        </ul>
+        <a href="https://billing.mollynodes.space/" target="_blank" class="plan-btn">Order Now</a>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-icon">⚙️</div>
+        <div class="plan-name">VPS 4</div>
+        <div class="plan-tagline">AMD High Performance</div>
+        <div class="plan-price"><span class="amount">₹3,250</span><span class="period">/mo</span></div>
+        <div class="plan-divider"></div>
+        <ul class="plan-specs">
+          <li>32GB DDR5 ECC RAM</li>
+          <li>12vCore</li>
+          <li>200GB NVMe SSD</li>
+        </ul>
+        <a href="https://billing.mollynodes.space/" target="_blank" class="plan-btn">Order Now</a>
+      </div>
+
+      <div class="plan-card featured">
+        <span class="badge">ENTERPRISE</span>
+        <div class="plan-icon">⚙️</div>
+        <div class="plan-name">VPS 5</div>
+        <div class="plan-tagline">AMD Enterprise</div>
+        <div class="plan-price"><span class="amount">₹6,230</span><span class="period">/mo</span></div>
+        <div class="plan-divider"></div>
+        <ul class="plan-specs">
+          <li>64GB DDR5 ECC RAM</li>
+          <li>24vCore</li>
+          <li>400GB NVMe SSD</li>
+        </ul>
+        <a href="https://billing.mollynodes.space/" target="_blank" class="plan-btn">Order Now</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEVELOPMENT SERVICES -->
+  <div class="plans-section" id="dev-services">
+    <div class="section-header">
+      <h2>Minecraft Server Development</h2>
+      <p>We build full Minecraft servers for you — professional setups, custom plugins, and polished gameplay.</p>
+    </div>
+
+    <div class="dev-grid">
+      <div class="dev-card">
+        <h3>Proxy</h3>
+        <div class="dev-tiers">
+          <div class="dev-tier">
+            <div class="dev-tier-label">Standard</div>
+            <div class="dev-tier-price">₹49</div>
+          </div>
+          <div class="dev-tier">
+            <div class="dev-tier-label">Professional</div>
+            <div class="dev-tier-price">₹79</div>
+          </div>
+          <div class="dev-tier">
+            <div class="dev-tier-label">Ultimate</div>
+            <div class="dev-tier-price">₹99</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dev-card">
+        <h3>Lobby</h3>
+        <div class="dev-tiers">
+          <div class="dev-tier">
+            <div class="dev-tier-label">Standard</div>
+            <div class="dev-tier-price">₹99</div>
+          </div>
+          <div class="dev-tier">
+            <div class="dev-tier-label">Professional</div>
+            <div class="dev-tier-price">₹129</div>
+          </div>
+          <div class="dev-tier">
+            <div class="dev-tier-label">Ultimate</div>
+            <div class="dev-tier-price">₹229</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dev-card">
+        <h3>Survival</h3>
+        <div class="dev-tiers">
+          <div class="dev-tier">
+            <div class="dev-tier-label">Standard</div>
+            <div class="dev-tier-price">₹179</div>
+          </div>
+          <div class="dev-tier">
+            <div class="dev-tier-label">Professional</div>
+            <div class="dev-tier-price">₹329</div>
+          </div>
+          <div class="dev-tier">
+            <div class="dev-tier-label">Ultimate</div>
+            <div class="dev-tier-price">₹350</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dev-card">
+        <h3>PVP</h3>
+        <div class="dev-tiers">
+          <div class="dev-tier">
+            <div class="dev-tier-label">Standard</div>
+            <div class="dev-tier-price">₹269</div>
+          </div>
+          <div class="dev-tier">
+            <div class="dev-tier-label">Professional</div>
+            <div class="dev-tier-price">₹299</div>
+          </div>
+          <div class="dev-tier">
+            <div class="dev-tier-label">Ultimate</div>
+            <div class="dev-tier-price">₹349</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dev-card">
+        <h3>Lifesteal</h3>
+        <div class="dev-tiers">
+          <div class="dev-tier">
+            <div class="dev-tier-label">Standard</div>
+            <div class="dev-tier-price">₹189</div>
+          </div>
+          <div class="dev-tier">
+            <div class="dev-tier-label">Professional</div>
+            <div class="dev-tier-price">₹229</div>
+          </div>
+          <div class="dev-tier">
+            <div class="dev-tier-label">Ultimate</div>
+            <div class="dev-tier-price">₹269</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dev-card">
+        <h3>Bedwars</h3>
+        <div class="dev-tiers">
+          <div class="dev-tier">
+            <div class="dev-tier-label">Standard</div>
+            <div class="dev-tier-price">₹329</div>
+          </div>
+          <div class="dev-tier">
+            <div class="dev-tier-label">Professional</div>
+            <div class="dev-tier-price">₹429</div>
+          </div>
+          <div class="dev-tier">
+            <div class="dev-tier-label">Ultimate</div>
+            <div class="dev-tier-price">₹629</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dev-card">
+        <h3>Parkour</h3>
+        <div class="dev-tiers">
+          <div class="dev-tier">
+            <div class="dev-tier-label">Standard</div>
+            <div class="dev-tier-price">₹89</div>
+          </div>
+          <div class="dev-tier">
+            <div class="dev-tier-label">Professional</div>
+            <div class="dev-tier-price">₹129</div>
+          </div>
+          <div class="dev-tier">
+            <div class="dev-tier-label">Ultimate</div>
+            <div class="dev-tier-price">₹159</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dev-card">
+        <h3>Skywars</h3>
+        <div class="dev-tiers">
+          <div class="dev-tier">
+            <div class="dev-tier-label">Standard</div>
+            <div class="dev-tier-price">₹149</div>
+          </div>
+          <div class="dev-tier">
+            <div class="dev-tier-label">Professional</div>
+            <div class="dev-tier-price">₹199</div>
+          </div>
+          <div class="dev-tier">
+            <div class="dev-tier-label">Ultimate</div>
+            <div class="dev-tier-price">₹349</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dev-card">
+        <h3>SkyBlock</h3>
+        <div class="dev-tiers">
+          <div class="dev-tier">
+            <div class="dev-tier-label">Standard</div>
+            <div class="dev-tier-price">₹129</div>
+          </div>
+          <div class="dev-tier">
+            <div class="dev-tier-label">Professional</div>
+            <div class="dev-tier-price">₹199</div>
+          </div>
+          <div class="dev-tier">
+            <div class="dev-tier-label">Ultimate</div>
+            <div class="dev-tier-price">₹229</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dev-card">
+        <h3>OneBlock</h3>
+        <div class="dev-tiers">
+          <div class="dev-tier">
+            <div class="dev-tier-label">Standard</div>
+            <div class="dev-tier-price">₹89</div>
+          </div>
+          <div class="dev-tier">
+            <div class="dev-tier-label">Professional</div>
+            <div class="dev-tier-price">₹129</div>
+          </div>
+          <div class="dev-tier">
+            <div class="dev-tier-label">Ultimate</div>
+            <div class="dev-tier-price">₹139</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dev-card">
+        <h3>Minigames</h3>
+        <div class="dev-tiers">
+          <div class="dev-tier">
+            <div class="dev-tier-label">Standard</div>
+            <div class="dev-tier-price">₹269</div>
+          </div>
+          <div class="dev-tier">
+            <div class="dev-tier-label">Professional</div>
+            <div class="dev-tier-price">₹599</div>
+          </div>
+          <div class="dev-tier">
+            <div class="dev-tier-label">Ultimate</div>
+            <div class="dev-tier-price">₹699</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dev-card">
+        <h3>Headsteal</h3>
+        <div class="dev-tiers">
+          <div class="dev-tier">
+            <div class="dev-tier-label">Standard</div>
+            <div class="dev-tier-price">₹159</div>
+          </div>
+          <div class="dev-tier">
+            <div class="dev-tier-label">Professional</div>
+            <div class="dev-tier-price">₹199</div>
+          </div>
+          <div class="dev-tier">
+            <div class="dev-tier-label">Ultimate</div>
+            <div class="dev-tier-price">₹229</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dev-card">
+        <h3>Manhunt</h3>
+        <div class="dev-tiers">
+          <div class="dev-tier">
+            <div class="dev-tier-label">Standard</div>
+            <div class="dev-tier-price">₹179</div>
+          </div>
+          <div class="dev-tier">
+            <div class="dev-tier-label">Professional</div>
+            <div class="dev-tier-price">₹249</div>
+          </div>
+          <div class="dev-tier">
+            <div class="dev-tier-label">Ultimate</div>
+            <div class="dev-tier-price">₹299</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DOMAINS -->
+  <div class="plans-section" id="domains">
+    <div class="section-header">
+      <h2>Domain Plans</h2>
+      <p>Get your own custom domain for your server. Perfect for branding your Minecraft experience.</p>
+    </div>
+
+    <div class="domain-grid">
+      <div class="domain-card">
+        <div class="domain-icon">🌐</div>
+        <div class="domain-name">.fun</div>
+        <div class="domain-price">₹249</div>
+      </div>
+
+      <div class="domain-card">
+        <div class="domain-icon">☁️</div>
+        <div class="domain-name">.cloud</div>
+        <div class="domain-price">₹409</div>
+      </div>
+
+      <div class="domain-card">
+        <div class="domain-icon">🎯</div>
+        <div class="domain-name">.xyz</div>
+        <div class="domain-price">₹739</div>
+      </div>
+
+      <div class="domain-card">
+        <div class="domain-icon">🌍</div>
+        <div class="domain-name">.com</div>
+        <div class="domain-price">₹1,339</div>
+      </div>
+
+      <div class="domain-card">
+        <div class="domain-icon">🔗</div>
+        <div class="domain-name">.net</div>
+        <div class="domain-price">₹1,449</div>
+      </div>
+
+      <div class="domain-card">
+        <div class="domain-icon">🎮</div>
+        <div class="domain-name">.gg</div>
+        <div class="domain-price">₹1,019</div>
+      </div>
+
+      <div class="domain-card">
+        <div class="domain-icon">🔐</div>
+        <div class="domain-name">.qzz.io</div>
+        <div class="domain-price">₹219</div>
+        <div class="domain-note">No SSL</div>
+      </div>
+    </div>
+
+    <p style="text-align:center;margin-top:40px;color:var(--muted);font-size:0.9rem;">
+      * Price may vary according to availability
+    </p>
+  </div>
+
+  <!-- BOOST PERKS -->
+  <div class="boost-section">
+    <h3>Discord Boost Perks</h3>
+    <p>Support MetroX with a Discord Boost and unlock awesome hosting rewards!</p>
+    <div class="boost-perks">
+      <div class="boost-perk">
+        <div class="boost-perk-label">1 Boost</div>
+        <div class="boost-perk-value">4GB RAM, 10GB Disk, 200% CPU</div>
+      </div>
+      <div class="boost-perk">
+        <div class="boost-perk-label">2 Boosts</div>
+        <div class="boost-perk-value">8GB RAM, 15GB Disk, 300% CPU</div>
+      </div>
+    </div>
+    <a href="https://discord.gg/vykq7fF3c9" target="_blank" class="boost-btn">Join Discord</a>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-bottom">
+    <p>© 2026 <span style="color:var(--accent);">MetroX Hosting</span>. All rights reserved.</p>
+    <p style="display:flex;gap:20px;flex-wrap:wrap;">
+      <a href="tos.html">Terms of Service</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="status.html">Status</a>
+      <a href="https://discord.gg/vykq7fF3c9" target="_blank">Discord</a>
+    </p>
+    <p>Premium Minecraft Hosting & VPS Solutions</p>
+  </div>
+</footer>
+
+</body>
+</html>

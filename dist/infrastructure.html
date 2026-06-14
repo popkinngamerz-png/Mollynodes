@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Infrastructure — MetroX Hosting</title>
+
+<!-- SEO -->
+<meta name="description" content="Explore MetroX's enterprise-grade infrastructure — AMD Ryzen 9 7900X + Intel Xeon E5-2699 V4, DDR4/DDR5 ECC RAM, NVMe Gen4 SSD, 5Gbps dedicated network, NetMoon DDoS protection, Mumbai & Noida data centers."/>
+<meta name="keywords" content="hosting infrastructure, ryzen cpu, xeon processor, ddos protection, data center, nvm ssd, ecc ram, metrohost infrastructure"/>
+<meta name="theme-color" content="#00d4ff"/>
+<link rel="icon" type="image/webp" href="/assets/mollynodes-logo-BUfI_eyz.webp"/>
+<link rel="apple-touch-icon" href="/assets/mollynodes-logo-BUfI_eyz.webp"/>
+<link rel="canonical" href="https://metrohost.xyz/infrastructure.html"/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="MetroX Hosting"/>
+<meta property="og:title" content="Infrastructure — MetroX Hosting"/>
+<meta property="og:description" content="⚡ Ryzen 9 7900X + Xeon E5-2699 V4 • DDR4/DDR5 ECC RAM • NVMe Gen4 SSD • 5Gbps Network • NetMoon DDoS • India Data Centers"/>
+<meta property="og:image" content="https://metrohost.xyz/mollynodes-logo.webp"/>
+<meta property="og:image:alt" content="MetroX — Enterprise Hosting"/>
+<meta property="og:url" content="https://metrohost.xyz/infrastructure.html"/>
+<meta property="og:locale" content="en_US"/>
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Infrastructure — MetroX Hosting"/>
+<meta name="twitter:description" content="⚡ Ryzen 9 7900X + Xeon E5-2699 V4 • DDR4/DDR5 ECC RAM • NVMe Gen4 SSD • 5Gbps Network • NetMoon DDoS"/>
+<meta name="twitter:image" content="https://metrohost.xyz/mollynodes-logo.webp"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+<style>
+:root {
+  --bg: #04070f;
+  --accent: #00d4ff;
+  --accent2: #0084ff;
+  --green: #00ff88;
+  --gold: #ffd700;
+  --text: #e8f4ff;
+  --muted: #6a8fa8;
+  --card: #0a1628;
+  --border: #112240;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+canvas#bgCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* NAVIGATION */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 40px;
+  background: rgba(4, 7, 15, 0.92);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.12);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.nav-logo img {
+  height: 44px;
+}
+
+.nav-logo span {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--muted);
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent);
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.6);
+}
+
+.btn-primary {
+  padding: 8px 20px;
+  background: linear-gradient(135deg, var(--accent2), var(--accent));
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.6);
+}
+
+.btn-outline {
+  padding: 8px 20px;
+  border: 1.5px solid var(--accent);
+  color: var(--accent);
+  background: transparent;
+  border-radius: 6px;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: rgba(0, 212, 255, 0.1);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  padding-top: 80px;
+}
+
+/* PAGE HERO */
+.page-hero {
+  padding: 60px 40px 40px;
+  text-align: center;
+}
+
+.page-hero h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  font-weight: 900;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+}
+
+.page-hero h1 span {
+  background: linear-gradient(90deg, var(--accent), var(--green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 6s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { filter: hue-rotate(0deg); }
+  50% { filter: hue-rotate(20deg); }
+}
+
+.page-hero p {
+  color: var(--muted);
+  max-width: 620px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* CPU SHOWCASE SECTION */
+.cpu-showcase {
+  padding: 80px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.cpu-showcase-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 48px;
+  color: var(--text);
+}
+
+.cpu-showcase-title span {
+  background: linear-gradient(90deg, var(--accent), var(--green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cpu-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.cpu-card {
+  background: linear-gradient(135deg, rgba(10, 22, 40, 0.8), rgba(13, 31, 60, 0.8));
+  border: 2px solid rgba(0, 212, 255, 0.2);
+  border-radius: 16px;
+  padding: 32px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  perspective: 1000px;
+}
+
+.cpu-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 132, 255, 0.1));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.cpu-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 40px rgba(0, 212, 255, 0.3), inset 0 0 20px rgba(0, 212, 255, 0.1);
+  transform: translateY(-8px) rotateX(5deg);
+}
+
+.cpu-card:hover::before {
+  opacity: 1;
+}
+
+.cpu-image-wrapper {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cpu-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.cpu-card:hover .cpu-image-wrapper img {
+  transform: scale(1.05);
+}
+
+.cpu-brand {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.9rem;
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.cpu-model {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.cpu-specs {
+  list-style: none;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.cpu-specs li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.cpu-specs li span:last-child {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.cpu-specs li:last-child {
+  border-bottom: none;
+}
+
+.cpu-card-btn {
+  width: 100%;
+  padding: 10px 16px;
+  margin-top: 16px;
+  background: rgba(0, 212, 255, 0.1);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  border-radius: 8px;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cpu-card-btn:hover {
+  background: var(--accent);
+  color: var(--bg);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+}
+
+/* ORBITAL SECTION */
+.orbital-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 80px;
+  padding: 80px 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.orbital-wrapper {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  flex-shrink: 0;
+}
+
+/* Central CPU Core */
+.cpu-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(135deg, var(--card), #0d1f3c);
+  border: 2px solid var(--accent);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 50px rgba(0, 212, 255, 0.4), inset 0 0 20px rgba(0, 212, 255, 0.1);
+  z-index: 10;
+}
+
+.cpu-core::before {
+  content: '';
+  position: absolute;
+  inset: -10px;
+  border: 2px solid rgba(0, 212, 255, 0.3);
+  border-radius: 20px;
+  animation: rotateSlow 8s linear infinite;
+}
+
+.cpu-icon {
+  font-size: 2.2rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.cpu-label {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 2px;
+  margin-top: 4px;
+  text-transform: uppercase;
+}
+
+.cpu-sub {
+  font-size: 0.65rem;
+  color: var(--green);
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+}
+
+/* PULSE RINGS */
+.pulse-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  animation: expandRing 3s ease-out infinite;
+}
+
+.pulse-ring:nth-child(1) {
+  width: 140px;
+  height: 140px;
+}
+
+.pulse-ring:nth-child(2) {
+  width: 140px;
+  height: 140px;
+  animation-delay: 1s;
+}
+
+.pulse-ring:nth-child(3) {
+  width: 140px;
+  height: 140px;
+  animation-delay: 2s;
+}
+
+@keyframes expandRing {
+  0% {
+    width: 100px;
+    height: 100px;
+    opacity: 0.8;
+  }
+  100% {
+    width: 350px;
+    height: 350px;
+    opacity: 0;
+  }
+}
+
+/* ORBIT RINGS */
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px solid rgba(0, 212, 255, 0.15);
+}
+
+.orbit-1 {
+  width: 220px;
+  height: 220px;
+  animation: rotateCW 12s linear infinite;
+}
+
+.orbit-2 {
+  width: 320px;
+  height: 320px;
+  animation: rotateCCW 18s linear infinite;
+}
+
+.orbit-3 {
+  width: 450px;
+  height: 450px;
+  animation: rotateCW 24s linear infinite;
+}
+
+/* Orbit nodes */
+.orbit-node {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 0 20px currentColor;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.orbit-node:hover {
+  transform: scale(1.15);
+}
+
+.orbit-1 .orbit-node {
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 212, 255, 0.2);
+  border: 2px solid var(--accent);
+  color: var(--accent);
+}
+
+.orbit-2 .orbit-node {
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 255, 136, 0.15);
+  border: 2px solid var(--green);
+  color: var(--green);
+}
+
+.orbit-2 .orbit-node-b {
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 215, 0, 0.15);
+  border: 2px solid var(--gold);
+  color: var(--gold);
+}
+
+.orbit-3 .orbit-node {
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(88, 101, 242, 0.15);
+  border: 2px solid #7289da;
+  color: #7289da;
+}
+
+.orbit-3 .orbit-node-b {
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 255, 136, 0.15);
+  border: 2px solid var(--green);
+  color: var(--green);
+}
+
+.orbit-3 .orbit-node-c {
+  top: 50%;
+  left: -20px;
+  transform: translateY(-50%);
+  background: rgba(0, 212, 255, 0.15);
+  border: 2px solid var(--accent);
+  color: var(--accent);
+}
+
+.orbit-3 .orbit-node-d {
+  top: 50%;
+  right: -20px;
+  transform: translateY(-50%);
+  background: rgba(255, 80, 80, 0.15);
+  border: 2px solid #ff5050;
+  color: #ff5050;
+}
+
+/* Tooltip on hover */
+.node-tip {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 100;
+}
+
+.orbit-node:hover .node-tip {
+  opacity: 1;
+}
+
+@keyframes rotateCW {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes rotateCCW {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+@keyframes rotateSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* INFO PANEL */
+.infra-info {
+  flex: 1;
+  min-width: 320px;
+}
+
+.infra-info h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin-bottom: 16px;
+}
+
+.infra-info h2 span {
+  background: linear-gradient(90deg, var(--accent), var(--green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.infra-info p {
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 24px;
+  font-size: 1rem;
+}
+
+.spec-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.spec-list li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  background: linear-gradient(135deg, rgba(10, 22, 40, 0.6), rgba(13, 31, 60, 0.6));
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 12px;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.spec-list li:hover {
+  border-color: var(--accent);
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 132, 255, 0.1));
+  transform: translateX(6px);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+}
+
+.spec-list li .si {
+  font-size: 1.3rem;
+  width: 28px;
+}
+
+.spec-list li .sv {
+  margin-left: auto;
+  color: var(--accent);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.85rem;
+}
+
+/* HARDWARE CARDS */
+.hardware-section {
+  padding: 80px 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.hw-section-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.hw-section-title span {
+  background: linear-gradient(90deg, var(--accent), var(--green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hw-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.hw-card {
+  background: linear-gradient(135deg, rgba(10, 22, 40, 0.8), rgba(13, 31, 60, 0.8));
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.hw-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  animation: scanLine 4s linear infinite;
+}
+
+@keyframes scanLine {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(500px);
+  }
+}
+
+.hw-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent);
+  box-shadow: 0 12px 40px rgba(0, 212, 255, 0.2);
+}
+
+.hw-icon {
+  font-size: 2.8rem;
+  margin-bottom: 12px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.hw-name {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hw-value {
+  font-size: 1.5rem;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.hw-desc {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
+/* DATA CENTER IMAGES */
+.datacenter-section {
+  padding: 80px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.datacenter-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.datacenter-title span {
+  background: linear-gradient(90deg, var(--accent), var(--green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.datacenter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.dc-image-card {
+  position: relative;
+  height: 350px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  background: rgba(10, 22, 40, 0.8);
+}
+
+.dc-image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.dc-image-card:hover img {
+  transform: scale(1.08);
+}
+
+.dc-image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, transparent, rgba(4, 7, 15, 0.9));
+  padding: 24px;
+  color: var(--text);
+}
+
+.dc-image-label {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.dc-image-desc {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+/* NETWORK PRESENCE */
+.network-section {
+  padding: 80px 60px;
+  text-align: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.network-section h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+
+.network-section p {
+  color: var(--muted);
+  margin-bottom: 48px;
+  font-size: 1.1rem;
+}
+
+.location-cards {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.loc-card {
+  background: linear-gradient(135deg, rgba(10, 22, 40, 0.8), rgba(13, 31, 60, 0.8));
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 16px;
+  padding: 28px 32px;
+  min-width: 220px;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.loc-card.active {
+  border-color: var(--green);
+}
+
+.loc-active-dot {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 12px;
+  height: 12px;
+  background: var(--green);
+  border-radius: 50%;
+  animation: pulse-dot 1.5s ease-in-out infinite;
+  box-shadow: 0 0 10px var(--green);
+}
+
+@keyframes pulse-dot {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.loc-flag {
+  font-size: 2.8rem;
+  margin-bottom: 8px;
+}
+
+.loc-name {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.loc-ping {
+  color: var(--green);
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.loc-status {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+.loc-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent);
+  box-shadow: 0 12px 40px rgba(0, 212, 255, 0.2);
+}
+
+/* FOOTER */
+footer {
+  position: relative;
+  z-index: 1;
+  background: rgba(4, 7, 15, 0.98);
+  border-top: 1px solid var(--border);
+  padding: 36px 60px;
+  margin-top: 60px;
+}
+
+.footer-bottom {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-bottom p {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.footer-bottom .credits {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.footer-bottom a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-bottom a:hover {
+  color: var(--accent);
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 212, 255, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 212, 255, 0.6);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  nav {
+    padding: 10px 20px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .page-hero {
+    padding: 40px 20px 30px;
+  }
+
+  .page-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .cpu-showcase {
+    padding: 60px 20px;
+  }
+
+  .cpu-cards-grid {
+    gap: 24px;
+    grid-template-columns: 1fr;
+  }
+
+  .orbital-section {
+    padding: 60px 20px;
+    gap: 40px;
+  }
+
+  .orbital-wrapper {
+    width: 350px;
+    height: 350px;
+  }
+
+  .orbit-3 {
+    width: 320px;
+    height: 320px;
+  }
+
+  .orbit-2 {
+    width: 220px;
+    height: 220px;
+  }
+
+  .orbit-1 {
+    width: 150px;
+    height: 150px;
+  }
+
+  .infra-info h2 {
+    font-size: 1.6rem;
+  }
+
+  .hardware-section,
+  .datacenter-section,
+  .network-section {
+    padding: 60px 20px;
+  }
+
+  .hw-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .datacenter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dc-image-card {
+    height: 250px;
+  }
+
+  footer {
+    padding: 24px 20px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .cpu-showcase-title,
+  .hw-section-title,
+  .datacenter-title,
+  .network-section h2 {
+    font-size: 1.4rem;
+  }
+
+  .infra-info h2 {
+    font-size: 1.4rem;
+  }
+
+  .hw-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .orbital-wrapper {
+    width: 280px;
+    height: 280px;
+  }
+
+  .orbit-3 {
+    width: 250px;
+    height: 250px;
+  }
+
+  .orbit-2 {
+    width: 170px;
+    height: 170px;
+  }
+
+  .orbit-1 {
+    width: 110px;
+    height: 110px;
+  }
+}
+</style>
+  <script type="module" crossorigin src="/assets/infrastructure-C8egVFIl.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-B5Qt9EMX.js">
+</head>
+<body>
+<canvas id="bgCanvas"></canvas>
+
+<nav>
+  <a class="nav-logo" href="index.html">
+    <img src="/assets/mollynodes-logo-BUfI_eyz.webp" alt="MetroX"/>
+    <span>MetroX</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="plans.html">Plans</a></li>
+    <li><a href="infrastructure.html" class="active">Infrastructure</a></li>
+    <li><a href="status.html">Status</a></li>
+    <li><a href="login.html">Login</a></li>
+  </ul>
+  <div style="display:flex;gap:12px;">
+    <a href="login.html" class="btn-outline">Sign In</a>
+    <a href="https://panel.metrohost.xyz/" target="_blank" class="btn-primary">Get Started</a>
+  </div>
+</nav>
+
+<main>
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <h1>Our <span>Infrastructure</span></h1>
+    <p>Enterprise-grade data centers with AMD Ryzen 9 7900X and Intel Xeon E5-2699 V4 processors, 5Gbps network, and NetMoon DDoS protection across Mumbai and Noida, India.</p>
+  </div>
+
+  <!-- CPU SHOWCASE -->
+  <div class="cpu-showcase">
+    <div class="cpu-showcase-title">Advanced <span>CPU Architecture</span></div>
+    <div class="cpu-cards-grid">
+      <!-- AMD RYZEN 9 -->
+      <div class="cpu-card">
+        <div class="cpu-image-wrapper">
+          <img src="https://images.pexels.com/photos/32300577/pexels-photo-32300577.jpeg?auto=compress&cs=tinysrgb&w=600" alt="AMD Ryzen 9 7900X CPU"/>
+        </div>
+        <div class="cpu-brand">AMD</div>
+        <div class="cpu-model">Ryzen 9 7900X</div>
+        <ul class="cpu-specs">
+          <li><span>Cores/Threads:</span><span>12C/24T</span></li>
+          <li><span>Boost Clock:</span><span>5.6 GHz</span></li>
+          <li><span>Memory:</span><span>DDR5</span></li>
+          <li><span>TDP:</span><span>170W</span></li>
+          <li><span>Architecture:</span><span>Zen 4</span></li>
+        </ul>
+        <button class="cpu-card-btn">Learn More</button>
+      </div>
+
+      <!-- INTEL XEON -->
+      <div class="cpu-card">
+        <div class="cpu-image-wrapper">
+          <img src="https://images.pexels.com/photos/30083229/pexels-photo-30083229.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Intel Xeon E5-2699 V4 CPU"/>
+        </div>
+        <div class="cpu-brand">Intel</div>
+        <div class="cpu-model">Xeon E5-2699 V4</div>
+        <ul class="cpu-specs">
+          <li><span>Cores/Threads:</span><span>22C/44T</span></li>
+          <li><span>Boost Clock:</span><span>3.6 GHz</span></li>
+          <li><span>Memory:</span><span>DDR4 ECC</span></li>
+          <li><span>TDP:</span><span>145W</span></li>
+          <li><span>Socket:</span><span>LGA 2011-3</span></li>
+        </ul>
+        <button class="cpu-card-btn">Learn More</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ORBITAL ANIMATION + INFO -->
+  <div class="orbital-section">
+    <div class="orbital-wrapper">
+      <!-- Pulse rings -->
+      <div class="pulse-ring"></div>
+      <div class="pulse-ring"></div>
+      <div class="pulse-ring"></div>
+
+      <!-- CPU Core -->
+      <div class="cpu-core">
+        <div class="cpu-icon">⚙️</div>
+        <div class="cpu-label">DUAL CPU</div>
+        <div class="cpu-sub">CLUSTER</div>
+      </div>
+
+      <!-- Orbit 1 — RAM -->
+      <div class="orbit orbit-1">
+        <div class="orbit-node">
+          🖥️<span class="node-tip">DDR4/DDR5 RAM</span>
+        </div>
+      </div>
+
+      <!-- Orbit 2 — Storage + Shield -->
+      <div class="orbit orbit-2">
+        <div class="orbit-node">
+          💾<span class="node-tip">NVMe Gen4 SSD</span>
+        </div>
+        <div class="orbit-node orbit-node-b">
+          🛡️<span class="node-tip">NetMoon DDoS</span>
+        </div>
+      </div>
+
+      <!-- Orbit 3 — Network + Features -->
+      <div class="orbit orbit-3">
+        <div class="orbit-node">
+          🌐<span class="node-tip">5Gbps Network</span>
+        </div>
+        <div class="orbit-node orbit-node-b">
+          🔄<span class="node-tip">Daily Backups</span>
+        </div>
+        <div class="orbit-node orbit-node-c">
+          🇮🇳<span class="node-tip">India Nodes</span>
+        </div>
+        <div class="orbit-node orbit-node-d">
+          ⚡<span class="node-tip">Low Latency</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="infra-info">
+      <h2>Powered By <span>Enterprise Hardware</span></h2>
+      <p>MetroX infrastructure combines dual-socket architecture with enterprise-grade components. Our cluster features the AMD Ryzen 9 7900X and Intel Xeon E5-2699 V4, delivering exceptional single and multi-threaded performance with zero overselling.</p>
+      <ul class="spec-list">
+        <li><span class="si">⚙️</span> CPU Architecture<span class="sv">Ryzen 9 7900X + Xeon E5-2699 V4</span></li>
+        <li><span class="si">🖥️</span> Memory Type<span class="sv">DDR4/DDR5 ECC RAM</span></li>
+        <li><span class="si">💾</span> Storage Tier<span class="sv">NVMe Gen4 SSD</span></li>
+        <li><span class="si">🌐</span> Network Uplink<span class="sv">5Gbps Dedicated</span></li>
+        <li><span class="si">🛡️</span> DDoS Protection<span class="sv">NetMoon Blackhole + Enterprise</span></li>
+        <li><span class="si">🌍</span> Location<span class="sv">Mumbai & Noida, India</span></li>
+        <li><span class="si">📊</span> Panel<span class="sv">Pterodactyl v1</span></li>
+        <li><span class="si">🔄</span> Backups<span class="sv">Daily Automated</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- HARDWARE SPECIFICATIONS -->
+  <div class="hardware-section">
+    <div class="hw-section-title">🔩 Hardware <span>Specifications</span></div>
+    <div class="hw-grid">
+      <div class="hw-card">
+        <div class="hw-icon">⚙️</div>
+        <div class="hw-name">Processor</div>
+        <div class="hw-value">Ryzen 9 7900X + Xeon</div>
+        <div class="hw-desc">Dual architecture for max performance</div>
+      </div>
+      <div class="hw-card">
+        <div class="hw-icon">🖥️</div>
+        <div class="hw-name">Memory</div>
+        <div class="hw-value">DDR4/DDR5 ECC</div>
+        <div class="hw-desc">Error-correcting enterprise-grade</div>
+      </div>
+      <div class="hw-card">
+        <div class="hw-icon">💾</div>
+        <div class="hw-name">Storage</div>
+        <div class="hw-value">NVMe Gen4 SSD</div>
+        <div class="hw-desc">7000+ MB/s sequential read</div>
+      </div>
+      <div class="hw-card">
+        <div class="hw-icon">🌐</div>
+        <div class="hw-name">Network</div>
+        <div class="hw-value">5 Gbps Uplink</div>
+        <div class="hw-desc">Dedicated, no bandwidth limits</div>
+      </div>
+      <div class="hw-card">
+        <div class="hw-icon">🛡️</div>
+        <div class="hw-name">DDoS Layer</div>
+        <div class="hw-value">NetMoon Blackhole</div>
+        <div class="hw-desc">Multi-layer attack mitigation</div>
+      </div>
+      <div class="hw-card">
+        <div class="hw-icon">🔄</div>
+        <div class="hw-name">Backups</div>
+        <div class="hw-value">Daily Automated</div>
+        <div class="hw-desc">One-click restore available</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DATA CENTER IMAGES -->
+  <div class="datacenter-section">
+    <div class="datacenter-title">Physical <span>Infrastructure</span></div>
+    <div class="datacenter-grid">
+      <div class="dc-image-card">
+        <img src="https://images.pexels.com/photos/4508751/pexels-photo-4508751.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Server Rack"/>
+        <div class="dc-image-overlay">
+          <div class="dc-image-label">Server Racks</div>
+          <div class="dc-image-desc">Enterprise-grade hardware deployment</div>
+        </div>
+      </div>
+      <div class="dc-image-card">
+        <img src="https://images.pexels.com/photos/5480781/pexels-photo-5480781.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Data Center"/>
+        <div class="dc-image-overlay">
+          <div class="dc-image-label">Data Center</div>
+          <div class="dc-image-desc">Climate-controlled facility with redundancy</div>
+        </div>
+      </div>
+      <div class="dc-image-card">
+        <img src="https://images.pexels.com/photos/1448561/pexels-photo-1448561.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Circuit Board"/>
+        <div class="dc-image-overlay">
+          <div class="dc-image-label">Network Backbone</div>
+          <div class="dc-image-desc">Low-latency interconnects & routing</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NETWORK PRESENCE -->
+  <div class="network-section">
+    <h2>🌍 Global Network <span style="background: linear-gradient(90deg, var(--accent), var(--green)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Presence</span></h2>
+    <p>Strategically positioned data centers for optimal latency across the Indian subcontinent.</p>
+    <div class="location-cards">
+      <div class="loc-card active">
+        <div class="loc-active-dot"></div>
+        <div class="loc-flag">🇮🇳</div>
+        <div class="loc-name">Mumbai Primary</div>
+        <div class="loc-ping">&lt; 5ms Avg</div>
+        <div class="loc-status">MC + VPS Ryzen • Active</div>
+      </div>
+      <div class="loc-card active">
+        <div class="loc-active-dot"></div>
+        <div class="loc-flag">🏢</div>
+        <div class="loc-name">Noida Secondary</div>
+        <div class="loc-ping">&lt; 8ms Avg</div>
+        <div class="loc-status">VPS Intel Xeon • Active</div>
+      </div>
+      <div class="loc-card active">
+        <div class="loc-active-dot"></div>
+        <div class="loc-flag">📊</div>
+        <div class="loc-name">Pterodactyl Panel</div>
+        <div class="loc-ping">panel.metrohost.xyz</div>
+        <div class="loc-status">Full Access • Active</div>
+      </div>
+      <div class="loc-card active">
+        <div class="loc-active-dot"></div>
+        <div class="loc-flag">📈</div>
+        <div class="loc-name">Status Monitoring</div>
+        <div class="loc-ping">status.html</div>
+        <div class="loc-status">Live Updates • Active</div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-bottom">
+    <p>© 2026 <span class="credits">MetroX Hosting</span>. All rights reserved.</p>
+    <p style="display:flex;gap:20px;flex-wrap:wrap;">
+      <a href="tos.html">Terms of Service</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="status.html">Status Page</a>
+      <a href="https://discord.gg/vykq7fF3c9" target="_blank">Discord</a>
+    </p>
+    <p>Enterprise Infrastructure Powered by <span class="credits">MetroX 2026</span></p>
+  </div>
+</footer>
+
+</body>
+</html>
